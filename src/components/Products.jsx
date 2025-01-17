@@ -1,5 +1,5 @@
 import React from 'react'
-import useProducts from '../hooks/useProducts'
+import useProducts from '../hooks/UseProducts'
 import PlaseHolderCards from './plaseHolderCards'
 import Productcards from './Productcards'
 
