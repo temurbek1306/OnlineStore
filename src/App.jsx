@@ -5,6 +5,7 @@ import Login from './Pages/Login'
 import Redirect from './components/Redirect'
 import Details from './Pages/Details'
 import Header from './components/Header'
+import Cart from './Pages/Cart'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Route path='/'  element={<Home/>}/>
       <Route path='/login'  element={<Login/>}/>
       <Route path='/details/:id'  element={<Details/>}/>
+      <Route path='/cart'  element={ <Cart/>}/>
       <Route path='/*'  element={<Redirect/>}/>
      </Routes>
     </>

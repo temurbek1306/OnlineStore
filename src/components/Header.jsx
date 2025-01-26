@@ -1,16 +1,19 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const state = useSelector((state) => state.cart);
 
-    const navigate =useNavigate()
 
-    function handlelogOut(){
-        localStorage.removeItem('token')
-        navigate('/login')
-        toast('Logged Out', {type:'info'})
-    }
+  const navigate = useNavigate();
+
+  function handlelogOut() {
+    localStorage.removeItem("token");
+    navigate("/login");
+    toast("Logged Out", { type: "info" });
+  }
 
   return (
     <header className=" text-bg-primary shadow sticky-top py-3">
@@ -60,16 +63,16 @@ function Header() {
           </li>
 
           <li>
-            <Link
-              className="btn-btn-primary text-light text-decoration-none"
-              to="/contact"
-            >
-              <i className="fa-solid fa-shopping-cart"></i>
+            <Link className="btn-btn-primary text-light text-decoration-none" to="/cart">
+                <i className="fa-solid fa-shopping-cart text-white"></i>
+                <span className="badge text-bg-danger">{state.items.length}</span>
             </Link>
           </li>
 
           <li>
-            <button className="btn btn-primary fs-4" onClick={handlelogOut}>Log Out</button>
+            <button className="btn btn-primary fs-4" onClick={handlelogOut}>
+              Log Out
+            </button>
           </li>
         </ul>
       </nav>
